@@ -264,3 +264,24 @@ span {
         margin-top: 4rem;
     }
 }
+
+/*Add Some animation to nav Bar*/
+.pagination{
+    text-align: center;
+}
+.pagination a{
+    color: #424246;
+    padding: 8px 10px;
+    text-decoration: overline;
+    display: inline-block;
+}
+.pagination a.active{
+    background-color:#42425a1b ;
+    border-radius:7px 8px;
+    font-weight: bold;
+}
+.pagination a:hover:not(.active){
+    background-color: #0d0d201b;
+    border-radius: 7px 8px;
+    font-weight: bold;
+}
