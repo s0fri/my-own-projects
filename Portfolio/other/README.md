@@ -1,5 +1,3 @@
-Here’s a polished, professional, and engaging README for your portfolio project. I included your name and space for your email (you can fill it in). I also highlighted your skills, project features, and design choices to make it stand out:
-
 ---
 
 # Rida's Portfolio 🌟
