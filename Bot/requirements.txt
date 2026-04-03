@@ -1,2 +1,9 @@
+flask
+python-telegram-bot
 pyTelegramBotAPI
 requests
+python-dotenv
+apscheduler
+
+
+
