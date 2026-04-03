@@ -1,4 +1,9 @@
 # telebot_subscription_bot.py — Fixed version
+''' 
+Add Flask Module | Stopping pooling & start Webhocs
+'''
+import os
+from flask import Flask , request
 import json
 import logging
 import time
@@ -285,6 +290,12 @@ def setup_bot():
         ], scope=BotCommandScopeChat(ADMIN_ID))
     logger.info("Bot ready")
 
+"""
+----------------------------------------
+    Uaing Pooling Method | Run From Ide
+----------------------------------------
+"""
+'''
 if __name__ == "__main__":
     setup_bot()
     logger.info("Starting polling...")
@@ -294,3 +305,36 @@ if __name__ == "__main__":
         except Exception as e:
             logger.error(f"Polling error: {e} — restarting in 10s")
             time.sleep(10)
+'''
+
+
+"""
+-----------------------------------
+    |Uaing Webhoocs Method 
+    | Aoutomaticly After Deploy 
+    | Get requests
+------------------------------------
+"""
+
+app = Flask(__name__)
+
+#* Bot Settings
+bot.remove_webhook()  #Remove old webhook
+bot.set_webhook(url=f"https://get-course-link-bot.onrender.com/{TOKEN}")  # Real link bot 
+
+#* Main route to check that the bot is running
+@app.route('/')
+def home():
+    return "Bot is running!"
+
+#* webhook route 
+@app.route(f'/{TOKEN}', methods=['POST'])
+def webhook_route():
+    json_str = request.get_data().decode('utf-8')
+    update = telebot.types.Update.de_json(json_str)
+    bot.process_new_updates([update])
+    return '', 200
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
