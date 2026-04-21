@@ -27,7 +27,7 @@ TOKEN        = os.getenv("BOT_TOKEN",  "8708911994:AAHwOV2uj3yclWV0KpkeZVUvCyNMF
 ADMIN_ID     = int(os.getenv("ADMIN_ID", "7020797610"))          # your Telegram user ID
 CHANNEL_ID   = int(os.getenv("CHANNEL_ID", "-1002427472384"))        # negative number e.g. -1002427472384
 CHANNEL_INVITE = os.getenv("CHANNEL_INVITE", "https://t.me/EasyCs_Official")
-WEBHOOK_HOST = os.getenv("WEBHOOK_HOST",  "https://get-course-link-bot.onrender.com")
+WEBHOOK_HOST = os.getenv("WEBHOOK_HOST",  "https://bot-qtnz.onrender.com")
 
 # Email config (optional — leave blank to disable email forwarding)
 SMTP_HOST    = os.getenv("SMTP_HOST",   "smtp.gmail.com")
