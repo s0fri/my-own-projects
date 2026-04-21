@@ -250,7 +250,7 @@ def menu_callbacks(call):
         courses = db.get_all_courses()
         if not courses:
             bot.send_message(cid, "📭 <b>No courses available yet.</b>\n\nCheck back soon!",
-                             reply_markup=back_keyboard())
+                            reply_markup=back_keyboard())
         else:
             bot.send_message(
                 cid,
@@ -320,8 +320,8 @@ def contact_send_callback(call):
 # Fixed by checking content_type == 'text' FIRST before accessing m.text
 @bot.message_handler(
     func=lambda m: m.content_type == "text"
-                   and m.from_user.id in user_states
-                   and not m.text.startswith("/")
+                and m.from_user.id in user_states
+                and not m.text.startswith("/")
 )
 def handle_state_input(message):
     if not ban_guard(message): return
@@ -346,7 +346,7 @@ def handle_state_input(message):
         forward_to_email(username, uid, text)
         user_states.pop(uid, None)
         bot.send_message(cid, "✅ <b>Message sent!</b>\n\nThank you — we'll get back to you shortly.",
-                         reply_markup=back_keyboard())
+                        reply_markup=back_keyboard())
 
     elif s == "awaiting_course_title":
         title = message.text.strip()
@@ -427,10 +427,16 @@ def webhook_route():
 # ── Entry point ───────────────────────────────────────────────────────────────
 if __name__ == "__main__":
     setup_bot()
-    logger.info("Starting polling — press Ctrl+C to stop")
-    while True:
-        try:
-            bot.infinity_polling(timeout=30, long_polling_timeout=30)
-        except Exception as e:
-            logger.error("Polling error: %s — restarting in 5s", e)
-            time.sleep(5)
+
+    WEBHOOK_URL = f"{WEBHOOK_HOST}/{TOKEN}"
+
+    # Set webhook
+    bot.remove_webhook()
+    time.sleep(1)
+    bot.set_webhook(url=WEBHOOK_URL)
+    logger.info(f"Webhook set to: {WEBHOOK_URL}")
+
+    # Start Flask (Render requires binding to 0.0.0.0 and PORT env var)
+    port = int(os.getenv("PORT", 8443))
+    logger.info(f"Starting Flask on port {port}")
+    app.run(host="0.0.0.0", port=port)
