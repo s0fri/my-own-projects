@@ -1,12 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edu</title>
-    <link rel="stylesheet" href="/Portfolio/Css/edu.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Education</title>
+    <link rel="stylesheet" href="edu.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-    
+    <div class="crt-glow" aria-hidden="true"></div>
+
+    <header>
+        <nav class="pagination">
+            <a href="nportfolio.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="skills.html">Skills</a>
+            <a href="edu.html" class="active">Education</a>
+            <a href="experience.html">Experience</a>
+            <a href="goMe.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+
+        <p class="breadcrumb">~/portfolio <span class="dim">$</span> cd education</p>
+        <h1>Education</h1>
+
+        <section class="terminal" aria-label="Education terminal">
+
+            <div class="terminal__bar">
+                <div class="terminal__dots">
+                    <span class="dot dot--red"></span>
+                    <span class="dot dot--amber"></span>
+                    <span class="dot dot--green"></span>
+                </div>
+                <span class="terminal__title">zsh — edu.sh — 96×32</span>
+                <span class="terminal__spacer" aria-hidden="true"></span>
+            </div>
+
+            <div class="terminal__body">
+
+                <!-- ============ INTRO ============ -->
+                <section class="block" data-block>
+                    <p class="prompt-line">
+                        <span class="prompt-user">visitor@portfolio</span><span class="prompt-sep">:</span><span
+                            class="prompt-path">~</span><span class="prompt-sep">$</span>
+                        <span class="typed-static">cat education.log</span>
+                    </p>
+                    <p class="intro-text">
+                        Formal schooling, the certifications I'm stacking on top of it,
+                        and what I've picked up on my own along the way.
+                    </p>
+                </section>
+
+                <!-- ============ FORMAL EDUCATION ============ -->
+                <section class="block" data-block>
+                    <p class="block__comment"># formal education</p>
+
+                    <ul class="log-list">
+                        <li class="log-item" style="--i:0">
+                            <span class="log-hash">e1</span>
+                            <span class="log-msg">
+                                <strong>School / program name</strong> — Degree or field of study
+                                <span class="log-date">2022 — present</span>
+                            </span>
+                        </li>
+                        <li class="log-item" style="--i:1">
+                            <span class="log-hash">e2</span>
+                            <span class="log-msg">
+                                <strong>High school name</strong> — track or specialization
+                                <span class="log-date">2019 — 2022</span>
+                            </span>
+                        </li>
+                    </ul>
+                    <p class="edit-note">— replace with your actual school names, programs, and years —</p>
+                </section>
+
+                <!-- ============ CERTIFICATIONS ============ -->
+                <section class="block" data-block>
+                    <p class="block__comment"># certifications &amp; courses</p>
+                    <ul class="cert-list">
+                        <li class="cert-item" style="--i:0">
+                            <span class="cert-status cert-status--progress">in progress</span>
+                            CCNA — Cisco Certified Network Associate
+                        </li>
+                        <li class="cert-item" style="--i:1">
+                            <span class="cert-status cert-status--todo">planned</span>
+                            Certification name — add here
+                        </li>
+                        <li class="cert-item" style="--i:2">
+                            <span class="cert-status cert-status--todo">planned</span>
+                            Certification name — add here
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- ============ SELF STUDY ============ -->
+                <section class="block" data-block>
+                    <p class="block__comment"># self-taught</p>
+                    <ul class="chip-list">
+                        <li class="chip" style="--i:0">web development</li>
+                        <li class="chip" style="--i:1">network security basics</li>
+                        <li class="chip" style="--i:2">ai workflow tooling</li>
+                        <li class="chip" style="--i:3">add topic</li>
+                    </ul>
+                </section>
+
+                <p class="prompt-line prompt-line--end">
+                    <span class="prompt-user">visitor@portfolio</span><span class="prompt-sep">:</span><span
+                        class="prompt-path">~</span><span class="prompt-sep">$</span>
+                    <span class="cursor cursor--static" aria-hidden="true">▌</span>
+                </p>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script src="edu.js"></script>
 </body>
+
 </html>

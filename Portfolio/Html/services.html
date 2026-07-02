@@ -1,13 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services</title>
-    <link rel="stylesheet" href="/Portfolio/Css/services.css">
 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services</title>
+    <link rel="stylesheet" href="/Css/services.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-    
+        <header>
+            <a href="nportfolio.html" class="logo">CYGNUS</a>
+            <nav class="pagination">
+                <a href="nportfolio.html">Home</a>
+                <a href="services.html" class="active">Services</a>
+                <a href="skills.html">Skills</a>
+                <a href="edu.html">Education</a>
+                <a href="experience.html">Experience</a>
+                <a href="goMe.html">Contact</a>
+            </nav>
+        </header>
+    <div class="crt-glow" aria-hidden="true"></div>
+    <main class="main-content">
+
+        <p class="breadcrumb">~/portfolio <span class="dim">$</span> cd services</p>
+        <h1>Services</h1>
+
+        <section class="terminal" aria-label="Services terminal">
+
+            <div class="terminal__bar">
+                <div class="terminal__dots">
+                    <span class="dot dot--red"></span>
+                    <span class="dot dot--amber"></span>
+                    <span class="dot dot--green"></span>
+                </div>
+                <span class="terminal__title">zsh — services.sh — 96×34</span>
+                <span class="terminal__spacer" aria-hidden="true"></span>
+            </div>
+
+            <div class="terminal__body">
+
+                <!-- ============ INTRO ============ -->
+                <section class="block" data-block>
+                    <p class="prompt-line">
+                        <span class="prompt-user">visitor@portfolio</span><span class="prompt-sep">:</span><span
+                            class="prompt-path">~</span><span class="prompt-sep">$</span>
+                        <span class="typed-static">cat services.json</span>
+                    </p>
+                    <p class="intro-text">
+                        I work across the stack — from building the interface people click through,
+                        to hardening the network it runs on. Below is what I can take on,
+                        start to finish or as a focused engagement.
+                    </p>
+                </section>
+
+                <!-- ============ OFFERINGS ============ -->
+                <section class="block" data-block>
+                    <p class="block__comment"># ls ~/services</p>
+
+                    <div class="service-grid">
+
+                        <article class="service-card" style="--i:0">
+                            <span class="service-card__icon"><i class="fa-solid fa-code"></i></span>
+                            <h3>Web Development</h3>
+                            <p>Responsive, fast websites and web apps built from scratch — from a landing page to a full
+                                product.</p>
+                            <ul class="tag-list tag-list--small">
+                                <li class="tag tag--static">html / css / js</li>
+                                <li class="tag tag--static">responsive</li>
+                            </ul>
+                        </article>
+
+                        <article class="service-card" style="--i:1">
+                            <span class="service-card__icon"><i class="fa-solid fa-pen-ruler"></i></span>
+                            <h3>UI / UX Design</h3>
+                            <p>Interfaces people don't have to think about — wireframes, prototypes, and a design system
+                                to keep it consistent.</p>
+                            <ul class="tag-list tag-list--small">
+                                <li class="tag tag--static">wireframes</li>
+                                <li class="tag tag--static">prototyping</li>
+                            </ul>
+                        </article>
+
+                        <article class="service-card" style="--i:2">
+                            <span class="service-card__icon"><i class="fa-solid fa-shield-halved"></i></span>
+                            <h3>Cybersecurity &amp; Network Security</h3>
+                            <p>Security-minded reviews and network hardening — audits, safer configurations, and
+                                practical fixes, not just a report.</p>
+                            <ul class="tag-list tag-list--small">
+                                <li class="tag tag--static">network security</li>
+                                <li class="tag tag--static">hardening</li>
+                            </ul>
+                        </article>
+
+                        <article class="service-card" style="--i:3">
+                            <span class="service-card__icon"><i class="fa-solid fa-robot"></i></span>
+                            <h3>AI Workflow Automation</h3>
+                            <p>Scripts and integrations that remove repetitive work — connecting APIs and tools so they
+                                run themselves.</p>
+                            <ul class="tag-list tag-list--small">
+                                <li class="tag tag--static">scripting</li>
+                                <li class="tag tag--static">apis</li>
+                            </ul>
+                        </article>
+
+                    </div>
+                </section>
+
+                <!-- ============ PROCESS ============ -->
+                <section class="block" data-block>
+                    <p class="block__comment"># git log --oneline process</p>
+
+                    <ul class="log-list">
+                        <li class="log-item" style="--i:0">
+                            <span class="log-hash">a1</span>
+                            <span class="log-msg"><strong>discovery</strong> — understand the goal, the users, the
+                                constraints</span>
+                        </li>
+                        <li class="log-item" style="--i:1">
+                            <span class="log-hash">b2</span>
+                            <span class="log-msg"><strong>plan</strong> — scope the work, agree on timeline and
+                                deliverables</span>
+                        </li>
+                        <li class="log-item" style="--i:2">
+                            <span class="log-hash">c3</span>
+                            <span class="log-msg"><strong>build</strong> — implement in steps, with progress you can
+                                see</span>
+                        </li>
+                        <li class="log-item" style="--i:3">
+                            <span class="log-hash">d4</span>
+                            <span class="log-msg"><strong>review &amp; launch</strong> — test, refine, ship</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <p class="prompt-line prompt-line--end">
+                    <span class="prompt-user">visitor@portfolio</span><span class="prompt-sep">:</span><span
+                        class="prompt-path">~</span><span class="prompt-sep">$</span>
+                    <a href="goMe.html" class="cta-inline">./start_project.sh</a>
+                    <span class="cursor cursor--static" aria-hidden="true">▌</span>
+                </p>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script src="/scipt/services.js"></script>
 </body>
+
 </html>

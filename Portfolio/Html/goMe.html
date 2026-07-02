@@ -1,13 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>goMe</title>
-    <link rel="stylesheet" href="/Portfolio/Css/goMe.css">
 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <link rel="stylesheet" href="/Css/contact.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-    
+    <div class="crt-glow" aria-hidden="true"></div>
+
+    <header>
+        <a href="nportfolio.html" class="logo">nass</a>
+        <nav class="pagination">
+            <a href="nportfolio.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="skills.html">Skills</a>
+            <a href="edu.html">Education</a>
+            <a href="experience.html">Experience</a>
+            <a href="goMe.html" class="active">Contact</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+
+        <p class="breadcrumb">~/portfolio <span class="dim">$</span> cd contact</p>
+        <h1>Contact</h1>
+
+        <section class="terminal" aria-label="Contact terminal">
+
+            <div class="terminal__bar">
+                <div class="terminal__dots">
+                    <span class="dot dot--red"></span>
+                    <span class="dot dot--amber"></span>
+                    <span class="dot dot--green"></span>
+                </div>
+                <span class="terminal__title">zsh — contact.sh — 96×30</span>
+                <span class="terminal__spacer" aria-hidden="true"></span>
+            </div>
+
+            <div class="terminal__body">
+
+                <!-- ============ DIRECT CONTACT ============ -->
+                <section class="block" data-block>
+                    <p class="prompt-line">
+                        <span class="prompt-user">visitor@portfolio</span><span class="prompt-sep">:</span><span
+                            class="prompt-path">~</span><span class="prompt-sep">$</span>
+                        <span class="typed-static">cat contact.info</span>
+                    </p>
+
+                    <div class="contact-direct">
+                        <a href="mailto:you@example.com" class="contact-email">
+                            <i class="fa-solid fa-envelope"></i> you@example.com
+                        </a>
+                        <div class="social-icon">
+                            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com/s0fri"><i class="fa-brands fa-github"></i></a>
+                            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============ MESSAGE FORM ============ -->
+                <section class="block" data-block>
+                    <p class="block__comment"># ./send_message.sh</p>
+
+                    <form id="contactForm" class="term-form" novalidate>
+
+                        <div class="field">
+                            <label for="name"><span class="field__prompt">$</span> name<span
+                                    class="field__colon">:</span></label>
+                            <input type="text" id="name" name="name" placeholder="jane doe" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="email"><span class="field__prompt">$</span> email<span
+                                    class="field__colon">:</span></label>
+                            <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="message"><span class="field__prompt">$</span> message<span
+                                    class="field__colon">:</span></label>
+                            <textarea id="message" name="message" rows="5" placeholder="what's on your mind..."
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-send">
+                            <span class="field__prompt">$</span> send
+                        </button>
+
+                        <p class="form-output" id="formOutput" aria-live="polite"></p>
+                    </form>
+                </section>
+
+                <p class="prompt-line prompt-line--end">
+                    <span class="prompt-user">visitor@portfolio</span><span class="prompt-sep">:</span><span
+                        class="prompt-path">~</span><span class="prompt-sep">$</span>
+                    <span class="cursor cursor--static" aria-hidden="true">▌</span>
+                </p>
+
+            </div>
+        </section>
+
+    </main>
+
+    <script src="/script/contact.js"></script>
 </body>
+
 </html>

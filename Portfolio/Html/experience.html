@@ -4,9 +4,191 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Experience</title>
-    <link rel="stylesheet" href="/Portfolio/Css/experience.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/Css/experience.css">
 </head>
 <body>
-    
+      <header>
+        <a href="nportfolio.html" class="logo">CYGNUS</a>
+        <nav class="pagination">
+          <a href="nportfolio.html">Home</a>
+          <a href="services.html" class="active">Services</a>
+          <a href="skills.html">Skills</a>
+          <a href="edu.html">Education</a>
+          <a href="experience.html">Experience</a>
+          <a href="goMe.html">Contact</a>
+        </nav>
+      </header>
+
+
+  <div class="crt-glow" aria-hidden="true"></div>
+
+  <main class="main-content">
+
+    <p class="breadcrumb">~/portfolio <span class="dim">$</span> cd experience</p>
+    <h1>Experience</h1>
+
+    <section class="terminal" aria-label="Experience terminal">
+
+      <div class="terminal__bar">
+        <div class="terminal__dots">
+          <span class="dot dot--red"></span>
+          <span class="dot dot--amber"></span>
+          <span class="dot dot--green"></span>
+        </div>
+        <span class="terminal__title">zsh — experience.sh — 96×32</span>
+        <span class="terminal__spacer" aria-hidden="true"></span>
+      </div>
+
+      <div class="terminal__body">
+
+        <!-- ============ INTRO ============ -->
+        <section class="block" data-block>
+          <p class="prompt-line">
+            <span class="prompt-user">visitor@portfolio</span><span class="prompt-sep">:</span><span class="prompt-path">~</span><span class="prompt-sep">$</span>
+            <span class="typed-static">whoami</span>
+          </p>
+          <p class="intro-text">
+            Web developer building clean, responsive interfaces —
+            currently branching into <span class="hl hl--violet">cybersecurity</span>,
+            learning how the things I build actually get attacked, and defended.
+            Half the day in a code editor, the other half in a terminal.
+          </p>
+        </section>
+
+        <!-- ============ PROGRAMMING ============ -->
+        <section class="block" data-block>
+          <p class="block__comment"># programming</p>
+          <ul class="chip-list">
+            <li class="chip" style="--i:0">html</li>
+            <li class="chip" style="--i:1">css</li>
+            <li class="chip" style="--i:2">javascript</li>
+            <li class="chip" style="--i:3">python</li>
+            <li class="chip" style="--i:4">dsa</li>
+            <li class="chip" style="--i:5">c++</li>
+          </ul>
+        </section>
+
+        <!-- ============ NETWORKING / CYBERSECURITY ============ -->
+        <section class="block" data-block>
+          <p class="block__comment"># currently learning</p>
+          <div class="highlight-card">
+            <div class="highlight-card__top">
+              <span class="highlight-card__tag">in progress</span>
+              <span class="highlight-card__pct">40%</span>
+            </div>
+            <h3>CCNA — Cisco Certified Network Associate</h3>
+            <p>Building a foundation in networking to support a move toward cybersecurity: routing &amp; switching, subnetting, and network security basics.</p>
+            <div class="progress-track">
+              <div class="progress-fill" style="--target:40%"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ PROJECTS ============ -->
+        <section class="block" data-block>
+          <p class="block__comment"># ls ~/projects</p>
+
+          <div class="project-grid">
+
+            <article class="project-card" style="--i:0">
+              <div class="project-card__head">
+                <span class="project-card__icon" aria-hidden="true">◆</span>
+                <span class="project-card__status">add project</span>
+              </div>
+              <h3>Project name</h3>
+              <p>One or two lines on what it does and the problem it solves.</p>
+              <ul class="tag-list tag-list--small">
+                <li class="tag tag--static">tech</li>
+                <li class="tag tag--static">tech</li>
+              </ul>
+              <div class="project-card__links">
+                <a href="#" class="link-arrow">live demo →</a>
+                <a href="#" class="link-arrow">source →</a>
+              </div>
+            </article>
+
+            <article class="project-card" style="--i:1">
+              <div class="project-card__head">
+                <span class="project-card__icon" aria-hidden="true">◆</span>
+                <span class="project-card__status">add project</span>
+              </div>
+              <h3>Project name</h3>
+              <p>One or two lines on what it does and the problem it solves.</p>
+              <ul class="tag-list tag-list--small">
+                <li class="tag tag--static">tech</li>
+                <li class="tag tag--static">tech</li>
+              </ul>
+              <div class="project-card__links">
+                <a href="#" class="link-arrow">live demo →</a>
+                <a href="#" class="link-arrow">source →</a>
+              </div>
+            </article>
+
+            <article class="project-card" style="--i:2">
+              <div class="project-card__head">
+                <span class="project-card__icon" aria-hidden="true">◆</span>
+                <span class="project-card__status">add project</span>
+              </div>
+              <h3>Project name</h3>
+              <p>One or two lines on what it does and the problem it solves.</p>
+              <ul class="tag-list tag-list--small">
+                <li class="tag tag--static">tech</li>
+                <li class="tag tag--static">tech</li>
+              </ul>
+              <div class="project-card__links">
+                <a href="#" class="link-arrow">live demo →</a>
+                <a href="#" class="link-arrow">source →</a>
+              </div>
+            </article>
+
+            <!-- "add new" placeholder card — duplicate the pattern above for real projects -->
+            <a href="#" class="project-card project-card--add" style="--i:3">
+              <span class="project-card--add__plus">+</span>
+              <span>Add another project</span>
+            </a>
+
+          </div>
+        </section>
+
+        <!-- ============ DOCS ============ -->
+        <section class="block" data-block>
+          <p class="block__comment"># ls ~/docs</p>
+
+          <ul class="doc-list">
+            <li class="doc-row" style="--i:0">
+              <span class="doc-row__icon">▤</span>
+              <span class="doc-row__name">resume.pdf</span>
+              <span class="doc-row__meta">—</span>
+              <a href="#" class="doc-row__action">view</a>
+            </li>
+            <li class="doc-row" style="--i:1">
+              <span class="doc-row__icon">▤</span>
+              <span class="doc-row__name">certificate — add here</span>
+              <span class="doc-row__meta">—</span>
+              <a href="#" class="doc-row__action">view</a>
+            </li>
+            <li class="doc-row" style="--i:2">
+              <span class="doc-row__icon">▤</span>
+              <span class="doc-row__name">certificate — add here</span>
+              <span class="doc-row__meta">—</span>
+              <a href="#" class="doc-row__action">view</a>
+            </li>
+          </ul>
+        </section>
+
+        <p class="prompt-line prompt-line--end">
+          <span class="prompt-user">visitor@portfolio</span><span class="prompt-sep">:</span><span class="prompt-path">~</span><span class="prompt-sep">$</span>
+          <span class="cursor cursor--static" aria-hidden="true">▌</span>
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+<script src="/script/experience.js"></script>
 </body>
 </html>

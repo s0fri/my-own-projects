@@ -1,13 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skills</title>
-    <link rel="stylesheet" href="/Portfolio/Css/skills.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/Css/skills.css">
 </head>
+
 <body>
-    
+        <header>
+            <a href="nportfolio.html" class="logo">CYGNUS</a>
+            <nav class="pagination">
+                <a href="nportfolio.html">Home</a>
+                <a href="services.html" class="active">Services</a>
+                <a href="skills.html">Skills</a>
+                <a href="edu.html">Education</a>
+                <a href="experience.html">Experience</a>
+                <a href="goMe.html">Contact</a>
+            </nav>
+        </header>
+
+    <div class="crt-glow" aria-hidden="true"></div>
+
+    <main class="main-content">
+
+        <h1>Our Skills</h1>
+        <p class="subhead">A running inventory of what I build with, kept in a shell where it belongs.</p>
+
+        <section class="terminal" aria-label="Skills terminal">
+
+            <div class="terminal__bar">
+                <div class="terminal__dots">
+                    <span class="dot dot--red"></span>
+                    <span class="dot dot--amber"></span>
+                    <span class="dot dot--green"></span>
+                </div>
+                <span class="terminal__title">zsh — skills.sh — 96×28</span>
+                <span class="terminal__spacer" aria-hidden="true"></span>
+            </div>
+
+            <div class="terminal__body">
+
+                <p class="prompt-line">
+                    <span class="prompt-user">visitor@portfolio</span><span class="prompt-sep">:</span><span
+                        class="prompt-path">~</span><span class="prompt-sep">$</span>
+                    <span id="typedCmd" class="typed"></span><span class="cursor" aria-hidden="true">▌</span>
+                </p>
+
+                <div class="output" id="output">
+
+                    <section class="block" data-block>
+                        <p class="block__comment"># languages</p>
+                        <ul class="lang-list">
+                            <li class="lang-item" style="--i:0">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                                    alt="Python" loading="lazy">
+                                <span>python</span>
+                            </li>
+                            <li class="lang-item" style="--i:1">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                                    alt="Java" loading="lazy">
+                                <span>java</span>
+                            </li>
+                            <li class="lang-item" style="--i:2">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                                    alt="JavaScript" loading="lazy">
+                                <span>javascript</span>
+                            </li>
+                            <li class="lang-item" style="--i:3">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+                                    alt="C/C++" loading="lazy">
+                                <span>c / c++</span>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section class="block" data-block>
+                        <p class="block__comment"># frontend</p>
+                        <ul class="tree-list">
+                            <li class="tree-item" style="--i:0"><span class="branch">├──</span><a href="#">html</a></li>
+                            <li class="tree-item" style="--i:1"><span class="branch">├──</span><a href="#">css</a></li>
+                            <li class="tree-item" style="--i:2"><span class="branch">├──</span><a href="#">responsive
+                                    design</a></li>
+                            <li class="tree-item" style="--i:3"><span class="branch">├──</span><a href="#">grid
+                                    design</a></li>
+                            <li class="tree-item" style="--i:4"><span class="branch">└──</span><a href="#">tailwind
+                                    css</a></li>
+                        </ul>
+                    </section>
+
+                    <section class="block" data-block>
+                        <p class="block__comment"># soft skills — npm test</p>
+                        <ul class="test-list">
+                            <li class="test-item" style="--i:0"><span class="check">✓</span>problem solving <span
+                                    class="dim">(3 cases)</span></li>
+                            <li class="test-item" style="--i:1"><span class="check">✓</span>teamwork <span
+                                    class="dim">(4 cases)</span></li>
+                            <li class="test-item" style="--i:2"><span class="check">✓</span>communication <span
+                                    class="dim">(2 cases)</span></li>
+                            <li class="test-item" style="--i:3"><span class="check">✓</span>fast learner <span
+                                    class="dim">(5 cases)</span></li>
+                        </ul>
+                        <p class="test-summary">4 passed, 4 total</p>
+                    </section>
+
+                    <section class="block" data-block>
+                        <p class="block__comment"># tools</p>
+                        <ul class="tag-list">
+                            <li class="tag" style="--i:0">vs code</li>
+                            <li class="tag" style="--i:1">linux</li>
+                            <li class="tag" style="--i:2">figma</li>
+                        </ul>
+                    </section>
+
+                    <p class="prompt-line prompt-line--end">
+                        <span class="prompt-user">visitor@portfolio</span><span class="prompt-sep">:</span><span
+                            class="prompt-path">~</span><span class="prompt-sep">$</span>
+                        <span class="cursor cursor--static" aria-hidden="true">▌</span>
+                    </p>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="/cript/sskills.js"></script>
 </body>
+
 </html>

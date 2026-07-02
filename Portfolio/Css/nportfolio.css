@@ -1,10 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+/* =========================================================
+   Tokens (shared with skills.css / experience.css)
+========================================================= */
+:root {
+    --bg: #10131a;
+    --bg-radial: #161b25;
+    --panel: #181c26;
+    --panel-border: #2a2f3d;
+    --text-primary: #e8e9f0;
+    --text-secondary: #8a8fa0;
+    --text-dim: #565c6e;
+
+    --accent-violet: #7c6fe8;
+    --accent-violet-soft: rgba(124, 111, 232, 0.14);
+    --accent-amber: #f2b84b;
+    --accent-green: #6fcf97;
+    --accent-red: #ef6f6c;
+
+    --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+    --font-body: 'Inter', -apple-system, 'Segoe UI', sans-serif;
+
+    --ease: cubic-bezier(.22, 1, .36, 1);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     border: none;
     outline: none;
-    font-family: "Poppins", sans-serif;
+    font-family: var(--font-body);
 }
 
 html {
@@ -15,8 +41,22 @@ body {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: black;
-    color: white;
+    background:
+        radial-gradient(circle at 15% 0%, var(--bg-radial) 0%, var(--bg) 55%),
+        var(--bg);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+}
+
+/* ambient glow, decorative only — no markup added */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(124, 111, 232, 0.10), transparent 70%);
 }
 
 header {
@@ -35,35 +75,60 @@ header {
 
 .logo {
     text-decoration: none;
-    font-size: 3rem;
-    color: #241299;
+    font-family: var(--font-mono);
+    font-size: 2.4rem;
+    color: var(--accent-violet);
     font-weight: 800;
     cursor: pointer;
     transition: 0.3s ease;
 }
 
-.logo:hover {
-    transform: scale(1.1);
+.logo::before {
+    content: '$ ';
+    color: var(--text-dim);
 }
 
+.logo:hover {
+    transform: scale(1.06);
+    text-shadow: 0 0 18px var(--accent-violet-soft);
+}
+
+/* =========================================================
+   Nav — pill tabs instead of the old dropdown, so it still
+   works on mobile without needing a toggle button
+========================================================= */
 nav a {
     text-decoration: none;
-    font-size: 1.8rem;
-    color: white;
-    margin-left: 4rem;
+    font-family: var(--font-mono);
+    font-size: 1.4rem;
+    color: var(--text-secondary);
+    margin-left: 1rem;
     font-weight: 500;
-    border-bottom: 3px solid transparent;
+    border-bottom: none;
+    padding: 0.7rem 1.3rem;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    transition: 0.25s ease;
 }
 
 nav a:hover,
 nav a:active {
-    color: #241299;
-    border-bottom: 3px solid #241299;
+    color: var(--text-primary);
+    border-color: var(--accent-violet);
+    background: var(--accent-violet-soft);
+}
+
+nav a.active {
+    color: var(--accent-violet);
+    border-color: var(--panel-border);
+    background: var(--panel);
 }
 
 section {
     min-height: 100vh;
     padding: 5rem 9% 5rem;
+    position: relative;
+    z-index: 1;
 }
 
 .home {
@@ -71,40 +136,66 @@ section {
     justify-content: center;
     align-items: center;
     gap: 8rem;
-    background-color: black;
+    background: transparent;
 }
 
 .home .home-content h1 {
-    font-size: 6rem;
+    font-family: var(--font-mono);
+    font-size: 5.2rem;
     font-weight: 700;
     line-height: 1.3;
+    opacity: 0;
+    animation: rise .6s var(--ease) forwards;
+    animation-delay: .05s;
 }
 
 span {
-    color: #241299;
+    color: var(--accent-violet);
 }
 
 .home-content h3 {
-    font-size: 4rem;
+    font-family: var(--font-mono);
+    font-size: 3.2rem;
     margin-bottom: 1rem;
     font-weight: 700;
+    opacity: 0;
+    animation: rise .6s var(--ease) forwards;
+    animation-delay: .18s;
 }
 
 .home-content p {
     font-size: 1.6rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 46ch;
+    opacity: 0;
+    animation: rise .6s var(--ease) forwards;
+    animation-delay: .3s;
+}
+
+.home-img {
+    opacity: 0;
+    animation: rise .7s var(--ease) forwards;
 }
 
 .home-img img {
     position: relative;
     width: 32vw;
     border-radius: 50%;
-    box-shadow: 0 0 25px #241299;
+    box-shadow: 0 0 40px var(--accent-violet-soft), 0 0 0 1px var(--panel-border);
     cursor: pointer;
-    transition: 0.2s linear;
+    transition: 0.25s var(--ease);
 }
 
 .home-img img:hover {
     transform: scale(1.03);
+    box-shadow: 0 0 55px rgba(124, 111, 232, 0.35), 0 0 0 1px var(--accent-violet);
+}
+
+.social-icon {
+    opacity: 0;
+    animation: rise .6s var(--ease) forwards;
+    animation-delay: .42s;
 }
 
 .social-icon a {
@@ -113,103 +204,107 @@ span {
     align-items: center;
     width: 4rem;
     height: 4rem;
-    background-color: transparent;
-    border: 0.2rem solid #241299;
-    font-size: 2rem;
+    background-color: #14171f;
+    border: 1px solid var(--panel-border);
+    font-size: 1.7rem;
     border-radius: 50%;
     margin: 3rem 1.5rem 3rem 0;
-    transition: 0.3s ease;
-    color: #241299;
+    transition: 0.25s ease;
+    color: var(--text-secondary);
     text-decoration: none;
 }
 
 .social-icon a:hover {
-    background-color: #241299;
-    color: white;
-    box-shadow: 0 0 10px #241299;
+    background-color: var(--accent-violet);
+    color: var(--text-primary);
+    border-color: var(--accent-violet);
+    box-shadow: 0 0 18px var(--accent-violet-soft);
     transform: translateY(-3px);
 }
 
 .btn {
     text-decoration: none;
     display: inline-block;
-    padding: 1rem 2.8rem;
-    background-color: black;
+    font-family: var(--font-mono);
+    padding: 1.1rem 2.8rem;
+    background-color: transparent;
     border-radius: 4rem;
-    font-size: 1.6rem;
-    color: #241299;
-    letter-spacing: 0.3rem;
-    font-weight: 800;
-    border: 2px solid #241299;
-    transition: 0.3s ease;
+    font-size: 1.4rem;
+    color: var(--accent-amber);
+    letter-spacing: 0.2rem;
+    font-weight: 700;
+    border: 1px solid var(--accent-amber);
+    transition: 0.25s ease;
     cursor: pointer;
+    opacity: 0;
+    animation: rise .6s var(--ease) forwards;
+    animation-delay: .5s;
 }
 
 .btn:hover {
     transform: scale(1.03);
-    background-color: #241299;
-    color: black;
-    box-shadow: 0 0 25px #241299;
+    background-color: var(--accent-amber);
+    color: #14171f;
+    box-shadow: 0 0 25px rgba(242, 184, 75, 0.35);
 }
 
+@keyframes rise {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.home-content h1,
+.home-content h3,
+.home-content p,
+.social-icon,
+.btn {
+    transform: translateY(14px);
+}
+
+.home-img {
+    transform: translateY(14px) scale(0.98);
+}
+
+/* =========================================================
+   Typing text — content now written by nportfolio.js;
+   this just styles the terminal-style cursor
+========================================================= */
 .typing-txt {
-    font-size: 3.4rem;
+    font-family: var(--font-mono);
+    font-size: 2.6rem;
     font-weight: 600;
     min-width: 280px;
+    color: var(--accent-violet);
 }
 
 .typing-txt span {
     position: relative;
-}
-
-.typing-txt span::before {
-    content: "Software Developer";
-    color: #241299;
-    animation: words 16s infinite;
+    color: var(--accent-violet);
 }
 
 .typing-txt span::after {
-    content: "";
-    background-color: black;
-    position: absolute;
-    width: calc(100% + 8px);
-    height: 100%;
-    border-left: 3px solid black;
-    right: -8px;
-    animation: cursor 0.6s infinite;
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 0.9em;
+    margin-left: 4px;
+    vertical-align: -0.12em;
+    background-color: var(--accent-amber);
+    animation: cursor-blink 0.85s steps(1) infinite;
 }
 
-@keyframes cursor {
-    to {
-        border-left: 3px solid white;
-    }
-}
-
-@keyframes words {
+@keyframes cursor-blink {
 
     0%,
-    20% {
-        content: "Web Developer";
+    49% {
+        opacity: 1;
     }
 
-    21%,
-    40% {
-        content: "Software Developer";
-    }
-
-    41%,
-    60% {
-        content: "Web Designer";
-    }
-
-    61%,
-    80% {
-        content: "Ai Workflow Developer";
-    }
-
-    81%,
+    50%,
     100% {
-        content: "Security Engineering";
+        opacity: 0;
     }
 }
 
@@ -220,43 +315,42 @@ span {
 }
 
 @media (max-width: 995px) {
+    header {
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 0;
+        padding: 1.2rem 6%;
+        background: rgba(16, 19, 26, 0.85);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--panel-border);
+    }
+
     nav {
-        position: absolute;
-        display: none;
-        top: 0;
-        right: 0;
-        width: 40%;
-        border-left: 3px solid #241299;
-        border-bottom: 3px solid #241299;
-        border-bottom-left-radius: 2rem;
-        padding: 1rem 2rem;
-        background-color: #19172aad;
+        width: 100%;
+        display: flex;
+        gap: 0.6rem;
+        overflow-x: auto;
+        padding-bottom: 0.4rem;
     }
 
     nav a {
-        display: block;
-        font-size: 2rem;
-        margin: 3rem 0;
-    }
-
-    nav a:hover,
-    nav a:active {
-        padding: 1rem;
-        border-radius: 0.5rem;
-        border-bottom: 0.5rem solid #241299;
+        margin-left: 0;
+        flex: 0 0 auto;
+        font-size: 1.3rem;
     }
 
     .home {
         flex-direction: column;
         margin: 5rem 4rem;
+        padding-top: 4rem;
     }
 
     .home .home-content h1 {
-        font-size: 5rem;
+        font-size: 4rem;
     }
 
     .home .home-content h3 {
-        font-size: 2.5rem;
+        font-size: 2.4rem;
     }
 
     .home-img img {
@@ -265,23 +359,21 @@ span {
     }
 }
 
-/*Add Some animation to nav Bar*/
-.pagination{
-    text-align: center;
-}
-.pagination a{
-    color: #424246;
-    padding: 8px 10px;
-    text-decoration: overline;
-    display: inline-block;
-}
-.pagination a.active{
-    background-color:#42425a1b ;
-    border-radius:7px 8px;
-    font-weight: bold;
-}
-.pagination a:hover:not(.active){
-    background-color: #0d0d201b;
-    border-radius: 7px 8px;
-    font-weight: bold;
+@media (prefers-reduced-motion: reduce) {
+
+    .home-content h1,
+    .home-content h3,
+    .home-content p,
+    .social-icon,
+    .btn,
+    .home-img {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    .typing-txt span::after {
+        animation: none;
+        opacity: 1;
+    }
 }
